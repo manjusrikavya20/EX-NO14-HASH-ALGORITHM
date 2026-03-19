@@ -27,9 +27,38 @@ To implement HASH ALGORITHM
 
 
 ## Program:
+```
+NAME: MANJUSRI KAVYA R
+REGISTER NUMBER: 212224040186
+```
+```
+#include <stdio.h>
+#include <string.h>
 
+unsigned int simple_hash(const char *message) {
+unsigned int hash = 0;
+int i;
+for (i = 0; i < strlen(message); i++) {
+hash = (hash * 31) + message[i];
+}
+return hash;
+}
+int main() {
+char message[256];
+unsigned int hash_value;
+
+printf("Enter the message to hash: ");
+fgets(message, sizeof(message), stdin);
+message[strcspn(message, "\n")] = '\0'; 
+hash_value = simple_hash(message);
+printf("Generated hash value: %u\n", hash_value);
+return 0;
+}
+```
 
 ## Output:
+
+<img width="364" height="186" alt="image" src="https://github.com/user-attachments/assets/eaea3e3a-d8de-4f45-8815-0cce520256fc" />
 
 ## Result:
 The program is executed successfully.
